@@ -50,7 +50,10 @@ sfft.MapView = Backbone.View.extend({
     var geocoder = new google.maps.Geocoder;
 
     geocoder.geocode({
-      address: address
+      address: address,
+      componentRestrictions: {
+        locality: "San Francisco"
+      }
     }, function (results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         var latlng = results[0].geometry.location;
