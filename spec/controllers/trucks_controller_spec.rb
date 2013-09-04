@@ -9,7 +9,7 @@ describe TrucksController do
     it "returns an array of all trucks" do
       get :index
       expect(response.status).to eq(200)
-      expect(response.body).to eq(trucks.to_json)
+      expect(assigns(:trucks)).to eq(trucks)
     end
   end
 end

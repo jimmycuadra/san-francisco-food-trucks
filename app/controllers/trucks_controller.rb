@@ -1,5 +1,5 @@
 class TrucksController < ApplicationController
   def index
-    render json: Truck.all
+    @trucks = Truck.all
   end
 end

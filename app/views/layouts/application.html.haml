@@ -4,6 +4,13 @@
     %title San Francisco Food Trucks
     = stylesheet_link_tag "application"
     = csrf_meta_tags
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
   %body
-    = yield
+    .container
+      .page-header
+        %h1
+          San Francisco Food Trucks
+          %small Find a great lunch spot near you
+      = yield
     = javascript_include_tag "application"
+    = yield :after_app_js

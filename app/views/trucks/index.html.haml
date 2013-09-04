@@ -1,0 +1,2 @@
+- content_for(:after_app_js) do
+  %script= raw "sfft.data = #{@trucks.to_json};"
