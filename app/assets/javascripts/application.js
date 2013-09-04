@@ -1,11 +1,12 @@
-;(function () {
-  var sfft = {
-    init: function () {
-      console.log("Google Maps is ready.");
-    }
-  };
+//= require underscore
+//= require backbone
+//= require core
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
 
-  google.maps.event.addDomListener(window, 'load', sfft.init);
+sfft.init = function () {
+  this.trucks = new sfft.TruckSet(sfft.data);
+}
 
-  window.sfft = sfft;
-})();
+google.maps.event.addDomListener(window, 'load', sfft.init);
