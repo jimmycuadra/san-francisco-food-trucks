@@ -28,5 +28,7 @@ module SFFoodTrucks
     console do
       config.console = Pry
     end
+
+    config.autoload_paths += %W(#{Rails.root}/lib)
   end
 end

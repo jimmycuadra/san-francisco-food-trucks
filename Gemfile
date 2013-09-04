@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'thin'
-gem 'mongoid'
-gem 'bson_ext'
+gem 'mongoid', github: 'mongoid'
 gem 'haml'
 gem 'sass-rails'
 gem 'uglifier'
+gem 'faraday'
 
 group :development, :test do
   gem 'pry'
