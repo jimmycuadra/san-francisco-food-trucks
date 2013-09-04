@@ -7,6 +7,7 @@ gem 'haml'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'faraday'
+gem 'rails-backbone'
 
 group :development, :test do
   gem 'pry'
