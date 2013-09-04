@@ -12,6 +12,7 @@ gem 'rails-backbone'
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
+  gem 'konacha'
 end
 
 group :development do

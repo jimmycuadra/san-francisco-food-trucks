@@ -7,6 +7,6 @@
 
 sfft.init = function () {
   this.trucks = new sfft.TruckSet(sfft.data);
-}
+};
 
-google.maps.event.addDomListener(window, 'load', sfft.init);
+google.maps.event.addDomListener(window, 'load', sfft.init.bind(sfft));
