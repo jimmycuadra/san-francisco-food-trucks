@@ -7,10 +7,12 @@
 
 // Render the map with the data from the server.
 sfft.init = function () {
+  this.loadingBar = $(".loading");
   this.trucks = new sfft.TruckSet;
   this.map = new sfft.MapView({ collection: this.trucks });
   this.map.render();
   this.trucks.reset(this.data);
+  this.loadingBar.toggleClass("hidden");
 };
 
 // Initialize the application when the window loads.
