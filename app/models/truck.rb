@@ -50,6 +50,8 @@ class Truck
   field :objectid, type: Integer
   field :y, type: BigDecimal
   field :x, type: BigDecimal
+  field :approved, type: DateTime
+  field :noisent, type: DateTime
 
   validates_presence_of :objectid, :longitude, :latitude, :address, :applicant
 end
