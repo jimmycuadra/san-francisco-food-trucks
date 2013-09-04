@@ -2,16 +2,17 @@ sfft.MapView = Backbone.View.extend({
   el: "#map",
 
   initialize: function () {
-    _.bindAll(this, "add");
-    this.listenTo(this.collection, "reset", this.addAll)
+    _.bindAll(this, "add", "focusMap");
+    this.listenTo(this.collection, "reset", this.addAll);
+    this.listenTo(this.options.search, "newaddress", this.focusMap);
   },
 
   render: function () {
-    this.$el.height($(window).height() - 200);
+    this.$el.height($(window).height() - 275);
 
     this._map = new google.maps.Map(this.el, {
       center: new google.maps.LatLng(37.7833, -122.4167),
-      zoom: 15,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -42,6 +43,22 @@ sfft.MapView = Backbone.View.extend({
         model.get("fooditems") + "</p>";
       this._infoWindow.setContent(content);
       this._infoWindow.open(this._map, marker);
+    }.bind(this));
+  },
+
+  focusMap: function (address) {
+    var geocoder = new google.maps.Geocoder;
+
+    geocoder.geocode({
+      address: address
+    }, function (results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        var latlng = results[0].geometry.location;
+        this._map.setCenter(new google.maps.LatLng(
+          latlng.ob,
+          latlng.pb
+        ));
+      }
     }.bind(this));
   }
 });

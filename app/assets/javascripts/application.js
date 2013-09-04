@@ -8,8 +8,12 @@
 // Render the map with the data from the server.
 sfft.init = function () {
   this.loadingBar = $(".loading");
+  this.search = new sfft.SearchView;
   this.trucks = new sfft.TruckSet;
-  this.map = new sfft.MapView({ collection: this.trucks });
+  this.map = new sfft.MapView({
+    collection: this.trucks,
+    search: this.search
+  });
   this.map.render();
   this.trucks.reset(this.data);
   this.loadingBar.toggleClass("hidden");
