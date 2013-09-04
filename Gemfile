@@ -9,6 +9,10 @@ gem 'uglifier'
 gem 'faraday'
 gem 'rails-backbone'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
