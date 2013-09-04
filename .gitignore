@@ -15,5 +15,4 @@
 /log/*.log
 /tmp
 /.env
-/config/mongoid.yml
 /coverage
