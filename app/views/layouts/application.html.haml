@@ -14,6 +14,10 @@
       .loading.progress.progress-striped.active
         .progress-bar{ role: "progressbar" }
       = yield
+      %footer
+        %p.text-center
+          %small
+            Created by <a href="http://www.jimmycuadra.com/">Jimmy Cuadra</a> for Uber. View the <a href="https://github.com/jimmycuadra/san-francisco-food-trucks">source code</a> on GitHub.
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDW6FIHuSmYXIecG6wMnKjYbF7q91BnTyc&sensor=false"
     = javascript_include_tag "application"
