@@ -1,4 +1,6 @@
 ENV["RAILS_ENV"] ||= 'test'
+require 'simplecov'
+SimpleCov.start "rails"
 require 'securerandom'
 ENV["SECRET_KEY_BASE"] ||= SecureRandom.hex(64)
 require File.expand_path("../../config/environment", __FILE__)

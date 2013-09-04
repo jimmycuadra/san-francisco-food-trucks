@@ -16,3 +16,4 @@
 /tmp
 /.env
 /config/mongoid.yml
+/coverage

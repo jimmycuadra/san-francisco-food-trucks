@@ -21,4 +21,5 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'simplecov'
 end
